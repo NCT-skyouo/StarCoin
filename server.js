@@ -7,17 +7,6 @@ client.discord = Discord;
 client.prefix = 's!'
 client.db = require("quick.db")
 client.cd = cd
-const http = require('http');
-const express = require('express');
-const app = express();
-app.get("/", (request, response) => {
-  console.log(Date.now() + "ping Received");
-  response.sendStatus(200);
-});
-app.listen(process.env.PORT);
-setInterval(() => {
-  http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
-}, 60000);
 fs.readdir("./handlers/", (err, files) => {
   if (err) return console.error(err);
   files.forEach(file => {
